@@ -17,18 +17,11 @@
     }
   },
   "scripts": {
+    "prepare": "husky install",
     "start": "node src/server.js",
     "test": "jest --coverage --runInBand --forceExit",
-    "lint": "eslint src/** teste/** --fix",
-    "secure-mode": "jest --watch --verbose=true",
-    "precommit": "npm run lint && npm test",
-    "prepush": "npm run lint"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm test",
-      "pre-push": "npm run lint && npm test"
-    }
+    "lint": "eslint src/** --fix",
+    "secure-mode": "jest --watch --verbose=true"
   },
   "keywords": [],
   "author": "",
