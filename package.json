@@ -1,0 +1,53 @@
+{
+  "name": "seu_barriga",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "jest": {
+    "coverageThreshold": {
+     "global": {
+      "statements": 80,
+      "branches": 80,
+      "functions": 80,
+      "lines": 80
+     },
+     "./src/services": {
+      "lines": 100
+     }  
+    }
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "jest --coverage --runInBand --forceExit",
+    "lint": "eslint src/** teste/** --fix",
+    "secure-mode": "jest --watch --verbose=true"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm test"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.17.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "jest": "23.6.0",
+    "supertest": "3.3.0"
+  },
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "1.18.3",
+    "consign": "0.1.6",
+    "express": "4.16.4",
+    "jwt-simple": "0.5.5",
+    "knex": "^2.1.0",
+    "knex-logger": "^0.1.0",
+    "moment": "2.29.3",
+    "passport": "0.4.0",
+    "passport-jwt": "4.0.0",
+    "pg": "^8.7.3"
+  }
+}
