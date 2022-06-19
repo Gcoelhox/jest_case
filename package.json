@@ -5,15 +5,15 @@
   "main": "index.js",
   "jest": {
     "coverageThreshold": {
-     "global": {
-      "statements": 80,
-      "branches": 80,
-      "functions": 80,
-      "lines": 80
-     },
-     "./src/services": {
-      "lines": 100
-     }  
+      "global": {
+        "statements": 80,
+        "branches": 80,
+        "functions": 80,
+        "lines": 80
+      },
+      "./src/services": {
+        "lines": 100
+      }
     }
   },
   "scripts": {
@@ -26,7 +26,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint &&npm test"
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run lint && npm test"
     }
   },
   "keywords": [],
@@ -44,6 +45,7 @@
     "body-parser": "1.18.3",
     "consign": "0.1.6",
     "express": "4.16.4",
+    "husky": "^8.0.1",
     "jwt-simple": "0.5.5",
     "knex": "^2.1.0",
     "knex-logger": "^0.1.0",
